@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Space_Grotesk } from "next/font/google";
-import Script from "next/script";
 import { Footer } from "@/components/navigation/Footer";
 import { SiteHeader } from "@/components/navigation/SiteHeader";
 import { ThemeProvider } from "@/components/navigation/ThemeProvider";
+import { getProfileImagePath } from "@/lib/assets";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 import "katex/dist/katex.min.css";
@@ -60,12 +60,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const profileImagePath = getProfileImagePath();
+
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    email: siteConfig.emails.professional,
-    jobTitle: siteConfig.title,
     name: siteConfig.name,
+    jobTitle: siteConfig.title,
+    description: siteConfig.description,
+    email: siteConfig.emails.professional,
+    ...(profileImagePath
+      ? { image: absoluteUrl(profileImagePath) }
+      : undefined),
+    worksFor: {
+      "@type": "Organization",
+      name: "Maastricht University",
+    },
     sameAs: siteConfig.social
       .filter((link) => link.href.startsWith("http"))
       .map((link) => link.href),
@@ -92,8 +102,14 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
-        <Script
-          id="person-json-ld"
+        {/*
+         * A plain server-rendered tag, not next/script: next/script defaults
+         * to strategy="afterInteractive", which on a static export means the
+         * tag is only injected client-side after hydration and is absent
+         * from the HTML crawlers actually fetch. This must be real markup in
+         * the initial response for search engines to read it reliably.
+         */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
