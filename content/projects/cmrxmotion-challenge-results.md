@@ -2,24 +2,20 @@
 title: "Extreme Cardiac MRI Analysis Under Respiratory Motion: Results of the CMRxMotion Challenge"
 slug: "cmrxmotion-challenge-results"
 summary: >-
-  Deep learning models have achieved state-of-the-art performance in
-  automated Cardiac Magnetic Resonance (CMR) analysis. However, the efficacy
-  of these models is highly dependent on the availability of high-quality,
-  artifact-free images. In clinical practice, CMR acquisitions are
-  frequently degraded by respiratory motion, yet the robustness of deep
-  learning models against such artifacts remains an underexplored problem.
-  To promote research in this domain, we organized the MICCAI CMRxMotion
-  challenge. We curated and publicly released a dataset of 320 CMR cine
-  series from 40 healthy volunteers who performed specific breathing
-  protocols to induce a controlled spectrum of motion artifacts. The
-  challenge comprised two tasks: automated image quality assessment to
-  classify images based on motion severity, and robust myocardial
-  segmentation in the presence of motion artifacts. A total of 22 algorithms
-  were submitted and evaluated on the two designated tasks. This paper
-  presents a comprehensive overview of the challenge design and dataset,
-  reports the evaluation results for the top-performing methods, and
-  further investigates the impact of motion artifacts on five clinically
-  relevant biomarkers. All resources and code are publicly available.
+  Deep learning models achieve state-of-the-art performance in automated
+  cardiac MRI (CMR) analysis, but their efficacy depends heavily on
+  high-quality, artifact-free images, and their robustness to the
+  respiratory motion artifacts common in clinical practice remains
+  underexplored. We organized the MICCAI CMRxMotion challenge, curating and
+  releasing a dataset of 320 CMR cine series from 40 healthy volunteers who
+  followed controlled breathing protocols to induce a spectrum of motion
+  artifacts. The challenge comprised two tasks, automated image-quality
+  classification by motion severity and myocardial segmentation robust to
+  motion, with 22 algorithms submitted and evaluated. This paper gives a
+  comprehensive overview of the challenge design and dataset, reports
+  evaluation results for the top-performing methods, and investigates how
+  motion artifacts affect five clinically relevant biomarkers. All resources
+  and code are public.
 year: 2026
 status: "completed"
 tags:

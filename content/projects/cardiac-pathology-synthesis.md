@@ -1,9 +1,23 @@
 ---
 title: "Cardiac Pathology Synthesis"
 slug: "cardiac-pathology-synthesis"
-summary: "Synthesis of cardiac MR images with plausible heart pathologies and realistic appearances for labelled-data generation."
-problem: "Medical image analysis models need diverse pathological examples, but labelled multi-disease cardiac MR data can be limited."
-contribution: "The project combines latent-space label manipulation with label-conditional image synthesis to generate 3D-consistent cardiac MR subjects."
+summary: >-
+  We propose a method for synthesizing cardiac MR images with plausible
+  heart pathologies and realistic appearances, to generate labeled data for
+  supervised deep-learning training. Synthesis combines label deformation
+  and label-to-image translation: the former via latent-space interpolation
+  in a VAE model, the latter via a label-conditional GAN model. We devise
+  three approaches to label manipulation in the VAE's latent space: intra-
+  subject synthesis to interpolate intermediate slices and increase
+  through-plane resolution, inter-subject synthesis to interpolate geometry
+  and appearance between dissimilar subjects from different scanner
+  vendors, and pathology synthesis to generate pseudo-pathological subjects
+  with characteristics of a desired heart disease. We also model the
+  relationship between 2D slices in the VAE's latent space prior to
+  reconstruction, generating 3D-consistent subjects from stacked 2D
+  slice-by-slice generations. This diversifies and enriches an available
+  cardiac MR database, and we quantitatively show it improves generalization
+  and robustness to multi-vendor, multi-disease data for image segmentation.
 year: 2023
 status: "completed"
 tags:
@@ -18,16 +32,10 @@ codeUrl: "https://github.com/sinaamirrajab/CardiacPathologySynthesis"
 draft: false
 ---
 
-## Research Context
+## Abstract
 
-I list this project in my public CV as "Cardiac Pathology Synthesis" and link it to the paper "Pathology Synthesis of 3D-Consistent Cardiac MR Images using 2D VAEs and GANs."
+We propose a method for synthesizing cardiac magnetic resonance (MR) images with plausible heart pathologies and realistic appearances for the purpose of generating labeled data for the application of supervised deep-learning (DL) training. The image synthesis consists of label deformation and label-to-image translation tasks. The former is achieved via latent space interpolation in a VAE model, while the latter is accomplished via a label-conditional GAN model. We devise three approaches for label manipulation in the latent space of the trained VAE model: i) intra-subject synthesis aiming to interpolate the intermediate slices of a subject to increase the through-plane resolution, ii) inter-subject synthesis aiming to interpolate the geometry and appearance of intermediate images between two dissimilar subjects acquired with different scanner vendors, and iii) pathology synthesis aiming to synthesize a series of pseudo-pathological synthetic subjects with characteristics of a desired heart disease.
 
-## Approach
+Furthermore, we propose to model the relationship between 2D slices in the latent space of the VAE prior to reconstruction for generating 3D-consistent subjects from stacking up 2D slice-by-slice generations. We demonstrate that such an approach could provide a solution to diversify and enrich an available database of cardiac MR images and to pave the way for the development of generalizable DL-based image analysis algorithms.
 
-The source abstract describes an image-synthesis pipeline with two tasks: label deformation and label-to-image translation. Label deformation uses latent-space interpolation in a VAE model, while label-to-image translation uses a label-conditional GAN.
-
-The project explores intra-subject synthesis, inter-subject synthesis, and pathology synthesis. It also models relationships between 2D slices in VAE latent space to generate 3D-consistent subjects from 2D slice-by-slice generations.
-
-## Evaluation Context
-
-The public description frames the work as a method for diversifying and enriching cardiac MR datasets for training and evaluating deep-learning segmentation models.
+We quantitatively evaluate the quality of the synthesized data in an augmentation scenario to achieve generalization and robustness to multi-vendor and multi-disease data for image segmentation.

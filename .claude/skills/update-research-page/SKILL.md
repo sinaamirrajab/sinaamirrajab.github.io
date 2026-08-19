@@ -12,7 +12,8 @@ This skill adds newly published papers to `content/projects/` so they appear on 
 
 ## 0. Read this first: hard rules
 
-- **The description is always the real abstract, verbatim.** Never write your own paraphrase, highlight list, or "key points" summary. The `summary` frontmatter field and the body's `## Abstract` section must both be the actual abstract text, copied faithfully. This was corrected once already after an early run wrote paraphrased summaries; do not regress to that.
+- **The body's `## Abstract` section is always the real abstract, verbatim.** Never write your own paraphrase or interpretation there, copy the actual abstract text faithfully. This was corrected once already after an early run wrote paraphrased summaries; do not regress to that.
+- **The `summary` frontmatter field is a condensed version of that same real abstract, targeting ~150 words (a range of roughly 120-160 is fine).** This was corrected a second time after full-length abstracts as the summary made every project list read inconsistently, some rows one line, others a wall of text. Condensing is not the same as paraphrasing from scratch: keep the real problem statement, method, and key quantitative results in the abstract's own wording wherever possible, and cut secondary methodological detail (hyperparameter sweeps, minor ablations, secondary metrics) to hit length. Never add a claim, number, or finding that is not in the source abstract. After writing each summary, count its words and confirm it lands in range before moving on, the same way every project in the initial harmonization pass was checked with a word-count script.
 - **Never guess a GitHub code link.** Only set `codeUrl` when you have confirmed, by reading the repo's actual README, that it is the code for that specific paper. A plausible-sounding repo name is not enough. If unsure, leave `codeUrl` unset.
 - **Never fabricate a paper URL, DOI, or citation count.** If you cannot find a real one, leave the project without `paperUrl` rather than inventing something.
 - **Don't touch existing content files** except to add a missing `paperUrl`/`codeUrl` you've now confirmed, exactly as described in step 4.
@@ -102,8 +103,9 @@ Frontmatter shape (see any file written by the first run for a full example, e.g
 title: "<paper title, title case, cleaned up>"
 slug: "<slug>"
 summary: >-
-  <the FULL abstract text, verbatim, as a YAML folded block scalar so long
-  text with quotes/apostrophes doesn't need escaping>
+  <a ~150-word condensation of the real abstract below, in its own wording
+  where possible, as a YAML folded block scalar so quotes/apostrophes don't
+  need escaping>
 year: <publication year, as a plain number>
 status: "completed"   # or "active" if it's genuinely ongoing work
 tags:

@@ -2,25 +2,19 @@
 title: "Deep Learning Synthesis of White-Blood from Dark-Blood Late Gadolinium Enhancement CMR"
 slug: "white-blood-dark-blood-lge-cmr-synthesis"
 summary: >-
-  Objectives: Dark-blood late gadolinium enhancement (DB-LGE) cardiac
-  magnetic resonance has been proposed as an alternative to standard
-  white-blood LGE (WB-LGE) imaging protocols to enhance scar-to-blood
-  contrast without compromising scar-to-myocardium contrast. In practice,
-  both DB and WB contrasts may have clinical utility, but acquiring both has
-  the drawback of additional acquisition time. The aim of this study was to
-  develop and evaluate a deep learning method to generate synthetic WB-LGE
-  images from DB-LGE, allowing the assessment of both contrasts without
-  additional scan time. Materials and Methods: DB-LGE and WB-LGE data from
-  215 patients were used to train 2 types of unpaired image-to-image
-  translation deep learning models, cycle-consistent generative adversarial
-  network (CycleGAN) and contrastive unpaired translation, with 5 different
-  loss function hyperparameter settings each. Results: The CycleGAN
-  architecture was found to provide the most realistic synthetic WB-LGE
-  images from DB-LGE images. It was difficult for visual readers to
-  distinguish if an image was true or synthetic (55% correctly classified).
-  Scar burden quantification with the synthetic data was highly correlated
-  with the analysis of the truly acquired images, with a mean bias of 0.44%
-  and limits of agreement from -10.85% to 11.74%.
+  Dark-blood late gadolinium enhancement (DB-LGE) cardiac MR has been
+  proposed as an alternative to standard white-blood LGE (WB-LGE) protocols
+  to enhance scar-to-blood contrast, but acquiring both has the drawback of
+  extra scan time. This study developed a deep learning method to generate
+  synthetic WB-LGE images from DB-LGE, allowing assessment of both contrasts
+  without additional scanning. DB-LGE and WB-LGE data from 215 patients
+  trained two unpaired image-to-image translation models, CycleGAN and
+  contrastive unpaired translation, across five loss-function settings each.
+  CycleGAN produced the most realistic synthetic WB-LGE images: visual
+  readers could barely distinguish real from synthetic (55% correctly
+  classified), and scar-burden quantification from the synthetic images was
+  highly correlated with the real WB-LGE, with a mean bias of 0.44%. Further
+  clinical evaluation is warranted before adoption.
 year: 2024
 status: "completed"
 tags:

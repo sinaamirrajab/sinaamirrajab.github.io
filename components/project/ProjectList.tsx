@@ -27,7 +27,7 @@ export function ProjectList({ projects }: { projects: ProjectDocument[] }) {
             className={cn(
               "grid gap-4 py-6 sm:gap-6",
               project.media
-                ? "sm:grid-cols-[5rem_9rem_1fr]"
+                ? "sm:grid-cols-[5rem_18rem_1fr]"
                 : "sm:grid-cols-[5rem_1fr]",
             )}
           >
@@ -37,7 +37,7 @@ export function ProjectList({ projects }: { projects: ProjectDocument[] }) {
             {project.media ? (
               <Link
                 aria-label={`Open project page for ${project.title}`}
-                className="w-28 shrink-0 sm:w-auto"
+                className="w-full max-w-sm shrink-0 sm:w-auto"
                 href={`/projects/${project.slug}`}
               >
                 <MediaPreview media={project.media} title={project.title} />

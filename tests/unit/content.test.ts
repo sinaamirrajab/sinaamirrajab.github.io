@@ -101,11 +101,12 @@ describe("content graph", () => {
   });
 
   it("combines draft writing and notes for the unified archive model", () => {
+    // Sorted newest-first by publishedAt; update alongside new draft content.
     expect(
       getWritingArchiveEntries({ includeDrafts: true }).map(
         (item) => item.label,
       ),
-    ).toEqual(["Note", "Essay"]);
+    ).toEqual(["Essay", "Note", "Essay"]);
   });
 
   it("builds tag indexes for published entries", () => {

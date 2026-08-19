@@ -1,9 +1,22 @@
 ---
 title: "Privacy-preserving open-source LLMs for clinical CMR report analysis"
 slug: "clinical-cmr-report-llms"
-summary: "Local open-source language models for extracting and classifying diagnostic information from cardiac MRI reports."
-problem: "Clinical report analysis needs useful language understanding while respecting privacy-sensitive medical text workflows."
-contribution: "The project investigates local open-source LLM deployment for diagnostic information extraction and classification from CMR reports."
+summary: >-
+  We investigated the utilization of privacy-preserving, locally-deployed,
+  open-source large language models to extract diagnostic information from
+  free-text cardiovascular magnetic resonance (CMR) reports. Nine open-source
+  LLMs were evaluated on their ability to identify diagnoses and classify
+  patients into cardiac diagnostic categories based on descriptive findings
+  in 109 clinical CMR reports, scored with accuracy, precision, recall, and
+  F1, with confusion matrices used to examine misclassification patterns.
+  Most models performed exceptionally well: Google's Gemma2 achieved the
+  highest average F1 score of 0.98, followed by Qwen2.5:32B and
+  DeepseekR1-32B at 0.96 and 0.95. All other evaluated models scored above
+  0.93, apart from Mistral and DeepseekR1-7B. The top four LLMs outperformed
+  a board-certified cardiologist (F1 score of 0.94) across every evaluation
+  metric. These findings demonstrate the feasibility of using open-source,
+  privacy-preserving LLMs in clinical settings for automated, accurate, fast,
+  and resource-efficient diagnostic categorization of imaging reports.
 year: 2025
 paperUrl: "https://arxiv.org/abs/2506.00060"
 codeUrl: "https://github.com/sinaamirrajab/llm_CMR_report_analysis"
@@ -21,16 +34,12 @@ tags:
 draft: false
 ---
 
-## Research Context
+## Abstract
 
-I source this project from my public CV as a comparative analysis of privacy-preserving open-source LLMs for extracting diagnostic information from clinical CMR imaging reports.
+Purpose: We investigated the utilization of privacy-preserving, locally-deployed, open-source Large Language Models (LLMs) to extract diagnostic information from free-text cardiovascular magnetic resonance (CMR) reports.
 
-## Approach
+Materials and Methods: We evaluated nine open-source LLMs on their ability to identify diagnoses and classify patients into various cardiac diagnostic categories based on descriptive findings in 109 clinical CMR reports. Performance was quantified using standard classification metrics including accuracy, precision, recall, and F1 score. We also employed confusion matrices to examine patterns of misclassification across models.
 
-The source abstract describes locally deployed open-source LLMs evaluated for identifying diagnoses and classifying patients into cardiac diagnostic categories from free-text CMR reports.
+Results: Most open-source LLMs demonstrated exceptional performance in classifying reports into different diagnostic categories. Google's Gemma2 model achieved the highest average F1 score of 0.98, followed by Qwen2.5:32B and DeepseekR1-32B with F1 scores of 0.96 and 0.95, respectively. All other evaluated models attained average scores above 0.93, with Mistral and DeepseekR1-7B being the only exceptions. The top four LLMs outperformed our board-certified cardiologist (F1 score of 0.94) across all evaluation metrics in analyzing CMR reports.
 
-The reported evaluation uses 109 clinical CMR reports and standard classification metrics including accuracy, precision, recall, and F1 score. The project keeps the framing research-focused: these are report-analysis experiments, not claims of a clinically deployed product.
-
-## Source Authors
-
-My public CV lists the authors as Sina Amirrajab, Volker Vehof, Michael Bietenbeck, and Ali Yilmaz.
+Conclusion: Our findings demonstrate the feasibility of implementing open-source, privacy-preserving LLMs in clinical settings for automated analysis of imaging reports, enabling accurate, fast and resource-efficient diagnostic categorization.
